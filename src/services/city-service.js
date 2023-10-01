@@ -11,9 +11,9 @@ module.exports = {
     }
   },
   // get all cities
-  async getAllCities() {
+  async getAllCities(filter) {
     try {
-      return await cityRepository.getAllCities();
+      return await cityRepository.getAllCities(filter);
     } catch (error) {
       throw error;
     }

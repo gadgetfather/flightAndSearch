@@ -1,5 +1,6 @@
 // require city model
 const { City } = require("../models");
+const { Op } = require("sequelize");
 // export city repository
 module.exports = {
   // create city
@@ -11,8 +12,13 @@ module.exports = {
     }
   },
   // get all cities
-  async getAllCities() {
+  async getAllCities(filter) {
     try {
+      if (filter.name) {
+        return await City.findAll({
+          where: { name: { [Op.like]: `%${filter.name}%` } },
+        });
+      }
       return await City.findAll();
     } catch (error) {
       throw { message: error.message, status: 500 };

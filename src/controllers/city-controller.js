@@ -15,7 +15,7 @@ exports.createCity = async (req, res, next) => {
 // get all cities -> /api/cities
 exports.getAllCities = async (req, res, next) => {
   try {
-    const cities = await cityService.getAllCities();
+    const cities = await cityService.getAllCities(req.query);
     res.status(200).json(cities);
   } catch (error) {
     return res.status(500).json({ message: error.message });
