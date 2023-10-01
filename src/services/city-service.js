@@ -50,4 +50,12 @@ module.exports = {
       throw error;
     }
   },
+  //get airports of a city
+  async getAirportsOfCity(id) {
+    try {
+      return await cityRepository.getAirportsOfCity(id);
+    } catch (error) {
+      throw error;
+    }
+  },
 };

@@ -56,4 +56,17 @@ module.exports = {
       throw { message: error.message, status: 500 };
     }
   },
+
+  //get airports of a city
+  async getAirportsOfCity(id) {
+    try {
+      const city = await City.findByPk(id, { include: "airports" });
+      if (!city) {
+        throw { message: "City not found", status: 404 };
+      }
+      return city.airports;
+    } catch (error) {
+      throw error;
+    }
+  },
 };
