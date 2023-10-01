@@ -7,3 +7,9 @@
   services/
   utils/
   config/
+
+  to create models
+  npx sequelize model:generate
+
+  to migrate DB
+  npx sequelize db:migrate
