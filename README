@@ -13,3 +13,6 @@
 
   to migrate DB
   npx sequelize db:migrate
+
+  to undo migration
+  npx sequelize db:migrate:undo
