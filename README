@@ -1,19 +1,25 @@
-/ 
- src
-  index.js/
-  models/
-  controllers/
-  middlewares/
-  services/
-  utils/
-  config/
-  repository/ (used to write logic where orm writes/reads from DB)
+/
+src
+index.js/
+models/
+controllers/
+middlewares/
+services/
+utils/
+config/
+repository/ (used to write logic where orm writes/reads from DB)
 
-  to create models
-  npx sequelize model:generate
+to create models
+npx sequelize model:generate
 
-  to migrate DB
-  npx sequelize db:migrate
+to migrate DB
+npx sequelize db:migrate
 
-  to undo migration
-  npx sequelize db:migrate:undo
+to undo migration
+npx sequelize db:migrate:undo
+
+to create seed
+npx sequelize seed:generate --name
+
+to run seed
+npx sequelize db:seed:all
