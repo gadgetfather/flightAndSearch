@@ -58,4 +58,13 @@ module.exports = {
       throw error;
     }
   },
+
+  //to bulk create cities
+  async bulkCreateCities(cities) {
+    try {
+      return await cityRepository.bulkCreateCities(cities);
+    } catch (error) {
+      throw error;
+    }
+  },
 };

@@ -77,3 +77,13 @@ exports.getAirportsOfCity = async (req, res, next) => {
     return res.status(500).json({ message: error.message });
   }
 };
+
+//to bulk create cities -> /api/cities/bulk
+exports.bulkCreateCities = async (req, res, next) => {
+  try {
+    const cities = await cityService.bulkCreateCities(req.body);
+    res.status(201).json(cities);
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+};

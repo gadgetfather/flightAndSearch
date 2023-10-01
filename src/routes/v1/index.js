@@ -11,6 +11,7 @@ router.get("/city/:name", cityController.getCityByName);
 router.put("/city/:id", cityController.updateCity);
 router.delete("/city/:id", cityController.deleteCity);
 router.get("/city/:id/airports", cityController.getAirportsOfCity);
+router.post("/city/bulk", cityController.bulkCreateCities);
 
 // airport routes
 router.post("/airport", airportController.createAirport);
