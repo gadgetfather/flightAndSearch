@@ -18,6 +18,7 @@ module.exports = {
         references: {
           model: "Cities",
           key: "id",
+          as: "cityId",
         },
       },
       address: {

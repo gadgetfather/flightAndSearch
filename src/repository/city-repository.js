@@ -1,5 +1,5 @@
 // require city model
-const { City } = require("../models");
+const { City, airport } = require("../models");
 const { Op } = require("sequelize");
 // export city repository
 module.exports = {
@@ -60,11 +60,11 @@ module.exports = {
   //get airports of a city
   async getAirportsOfCity(id) {
     try {
-      const city = await City.findByPk(id, { include: "airports" });
+      const city = await City.findByPk(id);
       if (!city) {
         throw { message: "City not found", status: 404 };
       }
-      return city.airports;
+      return city.getAirports();
     } catch (error) {
       throw error;
     }

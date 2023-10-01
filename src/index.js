@@ -13,10 +13,12 @@ const setupAndStartServer = async () => {
   //configure the express app
   app.listen(PORT, () => {
     console.log(`Example app listening at http://localhost:${PORT}`);
-    //sync the database
-    // db.sequelize.sync({ alter: true }).then(() => {
-    //   console.log("Sync Database");
-    // });
+    // sync the database
+    if (process.env.SYNC_DB) {
+      db.sequelize.sync({ alter: true }).then(() => {
+        console.log("Sync Database");
+      });
+    }
   });
 };
 
