@@ -19,3 +19,13 @@ exports.getAllFlights = async (req, res, next) => {
     return res.status(500).json({ message: error.message });
   }
 };
+
+//get flight by id -> /api/flights/:id
+exports.getFlightById = async (req, res, next) => {
+  try {
+    const flight = await flightService.getFlightById(req.params.id);
+    res.status(200).json(flight);
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+};
